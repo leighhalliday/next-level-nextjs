@@ -17,9 +17,11 @@ export default function Ppp({ coupon, discount, countryCode }: IProps) {
           <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-24 lg:px-8 lg:flex lg:items-center lg:justify-between">
             <div>
               <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl">
-                <span className="block">Purchasing Power Parity</span>
+                <span className="block">
+                  Purchasing Power Parity ({countryCode})
+                </span>
                 <span className="block text-cyan-800">
-                  Sorry... I'm not seeing your country.
+                  I'm not seeing a coupon for your country.
                 </span>
               </h2>
               <span>
@@ -112,8 +114,14 @@ interface IPPPResponse {
   ppp?: { pppConversionFactor?: number };
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
-  const countryCode = (req.headers["cf-ipcountry"] as string | null) ?? "US";
+export const getServerSideProps: GetServerSideProps = async ({
+  req,
+  query,
+}) => {
+  let countryCode = (req.headers["cf-ipcountry"] as string | null) ?? "US";
+  if (query.country) {
+    countryCode = query.country as string;
+  }
   let factor: number | undefined = known[countryCode];
 
   if (!factor || typeof factor === "undefined") {

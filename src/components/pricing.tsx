@@ -130,7 +130,7 @@ export default function Pricing() {
                   Pay once, own it forever
                 </p>
                 <div className="mt-4 flex items-center justify-center text-5xl font-extrabold text-gray-900">
-                  <span>$50</span>
+                  <span>$49</span>
                   <span className="ml-3 text-xl font-medium text-gray-500">
                     USD
                   </span>

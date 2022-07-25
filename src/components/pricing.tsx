@@ -130,22 +130,15 @@ export default function Pricing() {
                   Pay once, own it forever
                 </p>
                 <div className="mt-4 flex items-center justify-center text-5xl font-extrabold text-gray-900">
-                  <span>$49</span>
+                  <span>$FREE</span>
                   <span className="ml-3 text-xl font-medium text-gray-500">
                     USD
                   </span>
                 </div>
-                <p className="mt-4 text-sm">
-                  <Link href="/ppp">
-                    <a className="font-medium text-gray-500 underline">
-                      Purchasing Power Parity?
-                    </a>
-                  </Link>
-                </p>
                 <div className="mt-6">
                   <div className="rounded-md shadow">
                     <a
-                      href="https://courses.leighhalliday.com/next-level-next-js/buy"
+                      href="https://www.youtube.com/playlist?list=PL8fumNHsC-3PNJpiIa6Sm84yEo_Y0c7O_"
                       className="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-900"
                     >
                       Get Access
